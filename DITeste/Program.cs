@@ -12,6 +12,8 @@ builder.Services.AddSwaggerGen();
 //Configuracao Dependency Injection 
 builder.Services.AddScoped<IOperacao, Operacao>();
 builder.Services.AddScoped<ISobre, Sobre>();
+builder.Services.AddScoped<IEndereco, Endereco>();
+
 
 var app = builder.Build();
 

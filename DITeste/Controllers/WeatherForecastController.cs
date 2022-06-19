@@ -9,11 +9,13 @@ namespace DITeste.Controllers
 
         private readonly IOperacao _operacao;
         private readonly ISobre _sobre;
+        private readonly IEndereco _endereco;
 
-        public OperacaoController(IOperacao operacao)
+        public OperacaoController(IOperacao operacao, IEndereco endereco)
         {
             _operacao = operacao;
             _sobre = new Sobre();
+            _endereco = endereco;
         }
 
         [HttpGet("Contrutor")]
@@ -23,9 +25,15 @@ namespace DITeste.Controllers
         }
 
         [HttpGet("Sobre")]
-        public IActionResult SObre()
+        public IActionResult Sobre()
         {
             return Ok(this._sobre);
+        }
+
+        [HttpGet("Endereco")]
+        public IActionResult Endereco()
+        {
+            return Ok(this._endereco);
         }
 
 
